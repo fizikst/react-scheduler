@@ -215,17 +215,17 @@ const Week = () => {
               className="rs__cell rs__header rs__time"
             >
               <Typography variant="caption">
-                {format(h, "hh:mm", { locale: locale })}
+                {format(h, "H:mm", { locale: locale })}
               </Typography>
             </span>
             {daysList.map((date, ii) => {
               const start = new Date(
-                `${format(date, "yyyy/MM/dd")} ${format(h, "hh:mm")}`
+                `${format(date, "yyyy/MM/dd")} ${format(h, "H:mm")}`
               );
               const end = new Date(
                 `${format(date, "yyyy/MM/dd")} ${format(
                   addMinutes(h, step),
-                  "hh:mm"
+                  "H:mm"
                 )}`
               );
               const field = resourceFields.idField;

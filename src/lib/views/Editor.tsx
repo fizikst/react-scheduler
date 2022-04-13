@@ -206,7 +206,7 @@ const Editor = () => {
     }
     return (
       <Fragment>
-        <DialogTitle>{selectedEvent ? "Edit Event" : "Add Event"}</DialogTitle>
+        <DialogTitle>{selectedEvent ? "Изменить событие" : "Добавить событие"}</DialogTitle>
         <DialogContent style={{ overflowX: "hidden" }}>
           <Grid container spacing={1}>
             {Object.keys(state).map((key) => {
@@ -221,10 +221,10 @@ const Editor = () => {
         </DialogContent>
         <DialogActions>
           <Button color="inherit" fullWidth onClick={() => handleClose()}>
-            Cancel
+            Отмена
           </Button>
           <Button color="primary" fullWidth onClick={handleConfirm}>
-            Confirm
+            Сохранить
           </Button>
         </DialogActions>
       </Fragment>
