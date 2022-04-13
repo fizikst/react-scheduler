@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "start": "react-scripts start",
-    "pack": "webpack"
+    "pack": "webpack --config ./webpack.config.js --stats verbose"
   },
   "repository": {
     "type": "git",

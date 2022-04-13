@@ -16,6 +16,21 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 export type View = "month" | "week" | "day";
 
+const translate = (key: string) => {
+
+  switch (key) {
+    case 'week' :
+      return 'Неделя';
+    case 'month' :
+      return 'Месяц';
+    case 'day' :
+      return 'День';
+    default: 
+      return key
+  }
+
+}
+
 const Navigation = () => {
   const { selectedDate, view, week, handleState, getViews } = useAppState();
   const [anchorEl, setAnchorEl] = useState<Element | null>(null);
@@ -50,6 +65,8 @@ const Navigation = () => {
     }
   };
 
+  
+
   return (
     <div
       style={{
@@ -61,7 +78,7 @@ const Navigation = () => {
       {renderDateSelector()}
       <div>
         <Button onClick={() => handleState(new Date(), "selectedDate")}>
-          Today
+          Сегодня
         </Button>
         {views.length > 1 &&
           (isDesktop ? (
@@ -75,7 +92,7 @@ const Navigation = () => {
                   handleState(v, "view");
                 }}
               >
-                {v}
+                {translate(v)}
               </Button>
             ))
           ) : (
